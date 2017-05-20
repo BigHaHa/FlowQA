@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!-- Configuration of Module FlowQA.xml based off QualityAssessmentSG.xml -->
+
+<FlowQA
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation='[SCHEMAPATH]/FlowQA.xsd'>
+
+  <!-- file name of QA histograms. -->
+  <qaFileName> QAHistograms.root </qaFileName>
+
+  <!-- Cut Values - change to whatever you desire -->
+
+  <useVertexTracks>    0  </useVertexTracks>
+  <nMinVertexTracks>   0  </nMinVertexTracks>
+  <nMinVTPCClusters>   0 </nMinVTPCClusters>
+  <nMinTotalClusters>  0 </nMinTotalClusters>
+  <minPointRatio>      0 </minPointRatio>
+
+  <maxImpactX>         3  </maxImpactX>
+  <maxImpactY>         3  </maxImpactY>
+  <zMin>               -900 </zMin>
+  <zMax>               -100 </zMax>
+  <eBeam>              30.0 </eBeam>
+  <plotDriftVel>         0  </plotDriftVel> 
+  <!-- Turn Event Cuts On? (Turn off if using the event selection module) -->
+
+  <eventCutsOn>  1  </eventCutsOn>
+
+  <loopThroughMainVertex> 1 </loopThroughMainVertex>
+
+  <!-- definitions of histograms (can be selectively commented
+       out to avoid creation and filling) -->
+
+  <!-- histogram for Main Vertex Z Position -->
+  <histogram1D id="Main Vertex Z Position">
+    <nBinsX>   400 </nBinsX>
+    <xMin>     -600 </xMin>
+    <xMax>     -560 </xMax>
+    <xAxisTitle> Main Vertex Position [cm] </xAxisTitle>
+    <yAxisTitle> entries </yAxisTitle>
+  </histogram1D>
+
+  <!-- histogram for Prim Vertex Z Position -->
+  <histogram1D id="Prim Vertex Z Position">
+    <nBinsX>   400 </nBinsX>
+    <xMin>     -600 </xMin>
+    <xMax>     -560 </xMax>
+    <xAxisTitle> Prim Vertex Position [cm] </xAxisTitle>
+    <yAxisTitle> entries </yAxisTitle>
+  </histogram1D>
+
+  <!-- histogram for Main Vertex XY position -->
+  <histogram2D id="Main Vertex XY Position">
+    <nBinsX>   20 </nBinsX>
+    <xMin>    -10 </xMin>
+    <xMax>     10 </xMax>
+    <nBinsY>   20 </nBinsY>
+    <yMin>    -10 </yMin>
+    <yMax>     10 </yMax>
+    <xAxisTitle> X Position [cm] </xAxisTitle>
+    <yAxisTitle> Y Position [cm] </yAxisTitle>
+  </histogram2D>
+
+  <!-- histogram for Prim Vertex XY position -->
+  <histogram2D id="Prim Vertex XY Position">
+    <nBinsX>   20 </nBinsX>
+    <xMin>    -10 </xMin>
+    <xMax>     10 </xMax>
+    <nBinsY>   20 </nBinsY>
+    <yMin>    -10 </yMin>
+    <yMax>     10 </yMax>
+    <xAxisTitle> X Position [cm] </xAxisTitle>
+    <yAxisTitle> Y Position [cm] </yAxisTitle>
+  </histogram2D>
+
+  <!-- histogram for Phase Space -->
+  <histogram2D id="PhaseSpace">
+    <nBinsX>   120 </nBinsX>
+    <xMin>    0 </xMin>
+    <xMax>     80 </xMax>
+    <nBinsY>   8 </nBinsY>
+    <yMin>    0 </yMin>
+    <yMax>     1000 </yMax>
+    <xAxisTitle> Momentum [GeV] </xAxisTitle>
+    <yAxisTitle> Theta [mrad] </yAxisTitle>
+  </histogram2D>
+
+  <!-- histogram for dEdX -->
+  <histogram2D id="dEdX">
+    <nBinsX>   120 </nBinsX>
+    <xMin>    -1.5 </xMin>
+    <xMax>     2 </xMax>
+    <nBinsY>   120 </nBinsY>
+    <yMin>    .6 </yMin>
+    <yMax>     2.2 </yMax>
+    <xAxisTitle> Log10(Momentum [GeV]) </xAxisTitle>
+    <yAxisTitle> TruncatedMeanCharge </yAxisTitle>
+  </histogram2D>
+
+  <!-- histogram for m2 -->
+  <histogram2D id="m2">
+    <nBinsX>   100 </nBinsX>
+    <xMin>    1 </xMin>
+    <xMax>     10 </xMax>
+    <nBinsY>   100 </nBinsY>
+    <yMin>    -1 </yMin>
+    <yMax>     2 </yMax>
+    <xAxisTitle> Momentum [GeV] </xAxisTitle>
+    <yAxisTitle> Mass Squared (GeV)^2 </yAxisTitle>
+  </histogram2D>
+
+  <!-- histogram for m2dEdX -->
+  <histogram2D id="m2dEdX">
+    <nBinsX>   120 </nBinsX>
+    <xMin>    -1 </xMin>
+    <xMax>     2 </xMax>
+    <nBinsY>   120 </nBinsY>
+    <yMin>    .6 </yMin>
+    <yMax>     2.2 </yMax>
+    <xAxisTitle> Mass Squared (GeV)^2 </xAxisTitle>
+    <yAxisTitle> TruncatedMeanCharge </yAxisTitle>
+  </histogram2D>
+
+</FlowQA>

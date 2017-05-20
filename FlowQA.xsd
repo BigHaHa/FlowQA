@@ -1,0 +1,57 @@
+<xsd:schema
+  xmlns:xsd='http://www.w3.org/2001/XMLSchema'
+  xmlns:shine="http://cern.ch/na61/schema/types">
+
+  <xsd:import
+    namespace="http://cern.ch/na61/schema/types"
+    schemaLocation="[SCHEMAPATH_IMPORTS]/ShineSchemaTypes.xsd"/>
+
+  <xsd:element name="FlowQA">
+     <xsd:complexType>
+       <xsd:sequence>
+         <xsd:element name="qaFileName" type="xsd:string"/>
+         <xsd:element name = "useVertexTracks" type="xsd:boolean"/>
+	 <xsd:element name = "nMinVertexTracks" type="xsd:unsignedInt"/>
+ 	 <xsd:element name = "nMinVTPCClusters" type="xsd:unsignedInt"/>
+    	 <xsd:element name = "nMinTotalClusters" type="xsd:unsignedInt"/>
+    	 <xsd:element name = "minPointRatio" type = "xsd:double"/>
+    	 <xsd:element name = "maxImpactX" type = "xsd:double"/>
+    	 <xsd:element name = "maxImpactY" type = "xsd:double"/>
+	 <xsd:element name = "zMin" type = "xsd:double"/>
+	 <xsd:element name = "zMax" type = "xsd:double"/>
+	 <xsd:element name = "eBeam" type = "xsd:double"/>
+	 <xsd:element name = "plotDriftVel" type = "xsd:unsignedInt"/>
+         <xsd:element name = "eventCutsOn" type = "xsd:boolean"/>
+	 <xsd:element name = "loopThroughMainVertex" type = "xsd:boolean"/>
+         <xsd:element name="histogram1D" type="histogram1DType" minOccurs="0" maxOccurs="unbounded"/>
+         <xsd:element name="histogram2D" type="histogram2DType" minOccurs="0" maxOccurs="unbounded"/>
+       </xsd:sequence>
+     </xsd:complexType>
+  </xsd:element>
+
+  <xsd:complexType name="histogram1DType">
+    <xsd:sequence>
+      <xsd:element name="nBinsX" type="xsd:unsignedLong"/>
+      <xsd:element name="xMin" type="xsd:double"/>
+      <xsd:element name="xMax" type="xsd:double"/>
+      <xsd:element name="xAxisTitle" type="xsd:string"/>
+      <xsd:element name="yAxisTitle" type="xsd:string"/>
+    </xsd:sequence>
+    <xsd:attribute name="id" type="xsd:string" use="required"/>
+  </xsd:complexType>
+
+  <xsd:complexType name="histogram2DType">
+    <xsd:sequence>
+      <xsd:element name="nBinsX" type="xsd:unsignedLong"/>
+      <xsd:element name="xMin" type="xsd:double"/>
+      <xsd:element name="xMax" type="xsd:double"/>
+      <xsd:element name="nBinsY" type="xsd:unsignedLong"/>
+      <xsd:element name="yMin" type="xsd:double"/>
+      <xsd:element name="yMax" type="xsd:double"/>
+      <xsd:element name="xAxisTitle" type="xsd:string"/>
+      <xsd:element name="yAxisTitle" type="xsd:string"/>
+    </xsd:sequence>
+    <xsd:attribute name="id" type="xsd:string" use="required"/>
+  </xsd:complexType>
+
+</xsd:schema>
